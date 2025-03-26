@@ -22,8 +22,8 @@ def is_admin(user_id):
 # تابع پینگ گرفتن
 def ping_ip(ip):
     try:
-        # پینگ کردن آی‌پی و بررسی نتیجه
-        result = subprocess.run(['ping', '-n', '3', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+        # تغییر سوئیچ پینگ برای اوبونتو
+        result = subprocess.run(['ping', '-c', '3', ip], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         
         # بررسی وضعیت پینگ
         if result.returncode == 0:
